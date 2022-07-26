@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><title>Readme openSenseMap Archive</title></head><body><h1>This is a data dump of opensensemap.org.</h1>
+<p>Please make sure, you've made yourself familiar with the LICENSE. (Public Domain Dedication and License 1.0)</p>
+<p>The data is organized by date with each sensor station registered on opensensemap.org having a folder below the data folder. Each sensor station folder contains a &lt;boxid&gt;-&lt;boxname&gt;-&lt;date&gt;.json file with metadata and &lt;sensor_id&gt;.csv files for each sensor of the sensor station.</p>
+<p>Example:</p>
+<pre><code>/data
+  /2017-01-05
+    /571e05e051171e3c17786fe7-SenseBox_Home_ifgi
+      571e05e051171e3c17786fe7-SenseBox_Home_ifgi-2017-01-05.json
+      571e05e051171e3c17786fec.csv
+      571e05e051171e3c17786fed.csv
+      575fe40f72ee762c186f2b2a.csv
+</code></pre>
+<p>Each csv file contains two columns: createdAt, value.
+All timestamps are in UTC.
+The json file contains metadata of the sensor station such as location, name, exposure etc.
+It also contains information about the sensors.</p>
+<p>Example:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;SenseBox:Home@ifgi&quot;,
+  &quot;id&quot;: &quot;571e05e051171e3c17786fe7&quot;,
+  &quot;boxType&quot;: &quot;fixed&quot;,
+  &quot;exposure&quot;: &quot;outdoor&quot;,
+  &quot;model&quot;: null,
+  &quot;loc&quot;: {
+    &quot;geometry&quot;: {
+      &quot;coordinates&quot;: [
+        7.595694065093995,
+        51.96915799162825
+      ],
+      &quot;type&quot;: &quot;Point&quot;
+    }
+  },
+  &quot;sensors&quot;: [
+    {
+      &quot;title&quot;: &quot;rel. Luftfeuchte&quot;,
+      &quot;unit&quot;: &quot;%&quot;,
+      &quot;sensorType&quot;: &quot;HDC1008&quot;,
+      &quot;id&quot;: &quot;571e05e051171e3c17786fec&quot;
+    },
+    {
+      &quot;title&quot;: &quot;Temperatur&quot;,
+      &quot;unit&quot;: &quot;°C&quot;,
+      &quot;sensorType&quot;: &quot;HDC1008&quot;,
+      &quot;id&quot;: &quot;571e05e051171e3c17786fed&quot;
+    },
+    {
+      &quot;title&quot;: &quot;Wifi-Stärke&quot;,
+      &quot;unit&quot;: &quot;dBm&quot;,
+      &quot;sensorType&quot;: &quot;WiFi&quot;,
+      &quot;id&quot;: &quot;575fe40f72ee762c186f2b2a&quot;
+    }
+  ]
+}
+</code></pre>
+<p>The data you find here is dumped directly from the database using this script:<br>
+<a href="https://github.com/sensebox/osem-archiver">https://github.com/sensebox/osem-archiver</a></p>
+<p>The data is hosted on sciebo.de and is also accessible through<br>
+<a href="https://uni-muenster.sciebo.de/index.php/s/HyTbguBP4EkqBcp">https://uni-muenster.sciebo.de/index.php/s/HyTbguBP4EkqBcp</a></p>
+<p>You can access the archive also through webdav.<br>
+<a href="https://uni-muenster.sciebo.de/public.php/webdav/">https://uni-muenster.sciebo.de/public.php/webdav/</a><br>
+Username: HyTbguBP4EkqBcp<br>
+Leave password blank</p>
+</body></html>
